@@ -12,12 +12,15 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class BooksFragment : Fragment(R.layout.fragment_first) {
 
     private val booksViewModel: BooksViewModel by viewModel()
-
+    private val adapter:BooksAdapter = BooksAdapter(mutableListOf())
+//    private var rv:RecyclerView?=null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         booksViewModel.getBooksList(API_KEY)
+//        rv=view.findViewById(R.id.recyclerView)
+//        rv.adapter=adapter
     }
 
     private fun setupObservers() {
@@ -32,14 +35,7 @@ class BooksFragment : Fragment(R.layout.fragment_first) {
 
         })
         booksViewModel.booksListLiveData.observe(viewLifecycleOwner, {
-           // Log.i("ABC", it.bestsellers_date)
-            //nkarel ekac datan recycler view-i mej
-
-
-
-
-
-
+           adapter.updateList(it.books)
         })
 
     }
