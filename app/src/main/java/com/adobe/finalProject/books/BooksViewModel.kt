@@ -16,8 +16,8 @@ class BooksViewModel(
     val loadingLiveData: LiveData<Boolean> = _loadingLiveData
     private val _failLiveData = MutableLiveData<String>()
     val failLiveData: LiveData<String> = _failLiveData
-    private val _booksListLiveData = MutableLiveData<BooksResponseModel.Results>()
-    val booksListLiveData: LiveData<BooksResponseModel.Results> = _booksListLiveData
+    private val _booksListLiveData = MutableLiveData<BooksResponseModel.Results.Lists>()
+    val booksListLiveData: LiveData<BooksResponseModel.Results.Lists> = _booksListLiveData
 
     fun getBooksList(apiKey: String) {
         viewModelScope.launch {
@@ -25,7 +25,7 @@ class BooksViewModel(
                 when (it) {
                     is QueryResult.Loading -> _loadingLiveData.value = true
                     is QueryResult.Success -> {
-                        _booksListLiveData.value = it.response.results
+                        _booksListLiveData.value = it.response.results.lists[0]
                         _loadingLiveData.value = false
                     }
                     is QueryResult.Fail ->{

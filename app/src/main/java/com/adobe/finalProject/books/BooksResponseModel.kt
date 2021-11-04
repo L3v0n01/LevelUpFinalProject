@@ -31,7 +31,7 @@ data class BooksResponseModel(
                 val article_chapter_link: String,
                 val author: String,
                 val book_image: String,
-                val book_image_height: Int,
+                val bedddrfedrfderook_image_height: Int,
                 val book_image_width: Int,
                 val book_review_link: String,
                 val book_uri: String,
