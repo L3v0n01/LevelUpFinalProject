@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.BottomNavigationView" parent="">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Widget.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Card</item>
+    </style>
+
+    <style name="ThemeOverlay.Card" parent="">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/primary</item>
+    </style>
+</resources>

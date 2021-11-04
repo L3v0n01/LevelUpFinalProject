@@ -9,4 +9,46 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azure">#0b8dff</color>
     <color name="grey">#90abbd</color>
+
+    <color name="blue">#00cfe8</color>
+    <color name="indigo">#6610f2</color>
+    <color name="purple">#7367f0</color>
+    <color name="pink">#e83e8c</color>
+    <color name="red">#ea5455</color>
+    <color name="orange">#ff9f43</color>
+    <color name="yellow">#ffc107</color>
+    <color name="green">#28c76f</color>
+    <color name="teal">#20c997</color>
+    <color name="cyan">#17a2b8</color>
+    <color name="dark_white">#e9f0f2</color>
+    <color name="gray">#b8c2cc</color>
+    <color name="dark_gray">#1e1e1e</color>
+    <color name="blue_gray">#355261</color>
+    <color name="light">#f6f6f6</color>
+    <color name="lighter">#e9ecef</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="primary">@color/purple</color>
+    <color name="primary_light">#DD7367F0</color>
+    <color name="secondary">#82868b</color>
+    <color name="success">@color/green</color>
+    <color name="info">@color/blue</color>
+    <color name="warning">@color/orange</color>
+    <color name="danger">@color/red</color>
+    <color name="dark">#4b4b4b</color>
+
+    <color name="facebook">#3b5999</color>
+    <color name="twitter">#1da1f2</color>
+    <color name="google">#dd4b39</color>
+    <color name="instagram">#e4405f</color>
+    <color name="youtube">#cd201f</color>
+    <color name="slack">#3aaf85</color>
+    <color name="github">#222222</color>
+
+    <color name="bg_primary">#f2f2f3</color>
+    <color name="bg_secondary">@color/white</color>
+
+    <color name="bg_input">#d8d6de</color>
+    <color name="text_input">#6e6b7b</color>
+    <color name="hint_input">#d8d6de</color>
 </resources>
