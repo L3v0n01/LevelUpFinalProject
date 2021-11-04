@@ -8,7 +8,7 @@ import com.adobe.finalProject.R
 import com.adobe.finalProject.utils.Constants.API_KEY
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class BooksFragment : Fragment(R.layout.fragment_first) {
+class BooksFragment : Fragment(R.layout.fragment_books) {
 
     private val booksViewModel: BooksViewModel by viewModel()
 
