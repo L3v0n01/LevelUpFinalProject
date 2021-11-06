@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/booksFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
+        android:id="@+id/booksFragment"
         android:name="com.adobe.finalProject.books.BooksFragment"
         android:label="FirstFragment"
-        tools:layout="@layout/fragment_first">
-        <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+        tools:layout="@layout/fragment_books">
     </fragment>
-
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.adobe.finalProject.SecondFragment"
-        android:label="SecondFragment"
-        tools:layout="@layout/fragment_second" />
+            android:id="@+id/moviesFragment"
+            android:name="com.adobe.finalProject.movies.MoviesFragment"
+            android:label="fragment_movies"
+            tools:layout="@layout/fragment_movies" />
+    <fragment
+            android:id="@+id/storiesFragment"
+            android:name="com.adobe.finalProject.stories.StoriesFragment"
+            android:label="fragment_stories"
+            tools:layout="@layout/fragment_stories" />
 </navigation>
