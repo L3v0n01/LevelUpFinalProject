@@ -16,8 +16,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class StoriesAdapter(
-    private val context: Context,
-    private val stories: List<StoriesResponseModel.Result>
+    private var stories: List<StoriesResponseModel.Result>
 ) : RecyclerView.Adapter<StoriesAdapter.StoryViewHolder>() {
 
     class StoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,7 +41,10 @@ class StoriesAdapter(
 
         val item = stories[position]
 
-        initImageSlider(holder.storyImages, holder.storyImageIndicator, item.multimedia)
+        if (!item.multimedia.isNullOrEmpty()) {
+
+            initImageSlider(holder.storyImages, holder.storyImageIndicator, item.multimedia)
+        }
 
 
         holder.storyTitle.text = item.title
@@ -69,5 +71,11 @@ class StoriesAdapter(
 
         TabLayoutMediator(indicator, storyImages) { _, _ -> }.attach()
 
+    }
+
+    fun setItmes(items: List<StoriesResponseModel.Result>) {
+
+        stories = items
+        notifyItemRangeChanged(0, stories.size)
     }
 }
