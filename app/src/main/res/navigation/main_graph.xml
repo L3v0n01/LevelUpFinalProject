@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/booksFragment">
+    app:startDestination="@+id/books">
 
-    <fragment
-        android:id="@+id/booksFragment"
-        android:name="com.adobe.finalProject.books.BooksFragment"
-        android:label="FirstFragment"
-        tools:layout="@layout/fragment_books">
-    </fragment>
-    <fragment
-            android:id="@+id/moviesFragment"
-            android:name="com.adobe.finalProject.movies.MoviesFragment"
-            android:label="fragment_movies"
-            tools:layout="@layout/fragment_movies" />
-    <fragment
-            android:id="@+id/storiesFragment"
-            android:name="com.adobe.finalProject.stories.StoriesFragment"
-            android:label="fragment_stories"
-            tools:layout="@layout/fragment_stories" />
+    <include app:graph="@navigation/books" />
+    <include app:graph="@navigation/stories" />
+    <include app:graph="@navigation/movies" />
 </navigation>
