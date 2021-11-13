@@ -1,12 +1,12 @@
 package com.adobe.finalProject.stories
 
 data class StoriesResponseModel(
-    val copyright: String,
-    val last_updated: String,
-    val num_results: Int,
+    val copyright: String="",
+    val last_updated: String="",
+    val num_results: Int=0,
     val results: List<Result>,
-    val section: String,
-    val status: String
+    val section: String="",
+    val status: String=""
 ) {
     data class Result(
         val `abstract`: String,
