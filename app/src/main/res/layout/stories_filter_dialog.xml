@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+    <RadioGroup
+            android:id="@+id/storiesFilters"
+            android:checkedButton="@id/filterHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RadioButton
+                android:id="@+id/filterHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:buttonTint="@color/primary"/>
+
+        <RadioButton
+                android:id="@+id/filterArts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arts"
+                android:buttonTint="@color/primary"/>
+
+        <RadioButton
+                android:id="@+id/filterAutomobiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/automobiles"
+                android:buttonTint="@color/primary"/>
+
+        <RadioButton
+                android:id="@+id/filterBooks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/books"
+                android:buttonTint="@color/primary"/>
+
+        <RadioButton
+                android:id="@+id/filterBusiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/business"
+                android:buttonTint="@color/primary"/>
+    </RadioGroup>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
