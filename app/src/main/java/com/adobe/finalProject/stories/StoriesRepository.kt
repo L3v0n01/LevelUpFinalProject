@@ -7,21 +7,27 @@ import kotlinx.coroutines.flow.flow
 class StoriesRepository(private val storiesApiService: StoriesApiService) {
 
     fun getStories(
-        section: String,
+        section: Section?,
         apiKey: String
     ): Flow<QueryResult<StoriesResponseModel>> =
 
         flow {
-            emit(QueryResult.Loading)
+            if (section == null)  {
 
-            val response = try {
+                emit(QueryResult.Fail(Exception("No section provided")))
+            } else {
 
-                QueryResult.Success(storiesApiService.getStories(section, apiKey))
-            } catch (e: Exception) {
+                emit(QueryResult.Loading)
 
-                QueryResult.Fail(e)
+                val response = try {
+
+                    QueryResult.Success(storiesApiService.getStories(section.value, apiKey))
+                } catch (e: Exception) {
+
+                    QueryResult.Fail(e)
+                }
+
+                emit(response)
             }
-
-            emit(response)
         }
 }

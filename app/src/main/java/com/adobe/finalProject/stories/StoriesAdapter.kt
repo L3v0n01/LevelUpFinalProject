@@ -25,7 +25,6 @@ class StoriesAdapter(
         val storyImageIndicator: TabLayout = itemView.findViewById(R.id.storyImageIndicator)
         val storyTitle: TextView = itemView.findViewById(R.id.storyTitle)
         val storyAuthor: TextView = itemView.findViewById(R.id.storyAuthor)
-//        val storyPublishDate: TextView = itemView.findViewById(R.id.storyPublishDate)
         val storyAbstract: TextView = itemView.findViewById(R.id.storyAbstract)
     }
 
@@ -49,7 +48,6 @@ class StoriesAdapter(
 
         holder.storyTitle.text = item.title
         holder.storyAuthor.text = item.byline
-//        holder.storyPublishDate.text = item.published_date
         holder.storyAbstract.text = item.abstract
     }
 
@@ -73,9 +71,9 @@ class StoriesAdapter(
 
     }
 
-    fun setItmes(items: List<StoriesResponseModel.Result>) {
+    fun setItems(items: List<StoriesResponseModel.Result>) {
 
         stories = items
-        notifyItemRangeChanged(0, stories.size)
+        notifyDataSetChanged()
     }
 }
