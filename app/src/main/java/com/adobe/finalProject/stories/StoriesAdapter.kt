@@ -71,9 +71,9 @@ class StoriesAdapter(
 
     }
 
-    fun setItmes(items: List<StoriesResponseModel.Result>) {
+    fun setItems(items: List<StoriesResponseModel.Result>) {
 
         stories = items
-        notifyItemRangeChanged(0, stories.size)
+        notifyDataSetChanged()
     }
 }
