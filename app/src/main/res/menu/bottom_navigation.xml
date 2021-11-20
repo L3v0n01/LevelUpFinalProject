@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-            android:id="@+id/books"
-            android:title="@string/books"
-            android:enabled="true"
-            android:icon="@drawable/ic_book_outline"/>
+        android:id="@+id/books"
+        android:enabled="true"
+        android:icon="@drawable/ic_book_outline"
+        android:title="@string/books" />
 
     <item
-            android:id="@+id/stories"
-            android:title="@string/stories"
-            android:enabled="true"
-            android:icon="@drawable/ic_newspaper_outline"/>
+        android:id="@+id/stories"
+        android:enabled="true"
+        android:icon="@drawable/ic_newspaper_outline"
+        android:title="@string/stories" />
 
-    <item
-            android:id="@+id/movies"
-            android:title="@string/movies"
-            android:enabled="true"
-            android:icon="@drawable/ic_videocam_outline"/>
 </menu>
