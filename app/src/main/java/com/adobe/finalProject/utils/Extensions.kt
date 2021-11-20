@@ -3,14 +3,10 @@ package com.adobe.finalProject
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 
-
-/**
- * Created by Levon Arzumanyan on 10/26/21.
- * Project Name: ARMED
- * NOORLOGIC
- */
 fun Fragment.goToFacebookPageByUrl(pm: PackageManager, fbPageUrl: String) {
     var uri: Uri = Uri.parse(fbPageUrl)
     try {
@@ -28,4 +24,10 @@ fun Fragment.goToAnotherAppByUrl(channelUrl: String) =
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(channelUrl)))
     } catch (e: Exception) {
     }
+
+fun runDelayed(delay: Long, delayedFunction: () -> Unit) {
+    Handler(Looper.getMainLooper()).postDelayed({
+        delayedFunction.invoke()
+    }, delay)
+}
 

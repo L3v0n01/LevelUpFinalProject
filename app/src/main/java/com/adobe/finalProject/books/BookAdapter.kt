@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.adobe.finalProject.R
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 class BookAdapter(
-    private val onClick: (url:String) -> Unit,
+    private val onClick: (url: String) -> Unit,
     private val context: Fragment,
     private var books: BooksResponseModel?
 ) : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
@@ -35,21 +37,16 @@ class BookAdapter(
         holder.author.text = books?.results?.get(position)?.byline
         holder.section.text = books?.results?.get(position)?.section
         holder.itemView.setOnClickListener {
-            onClick.invoke(books?.results?.get(position)?.url?:"")
+            onClick.invoke(books?.results?.get(position)?.url ?: "")
         }
         if (books?.results?.get(position)?.media.isNullOrEmpty().not()) {
             Glide
                 .with(context)
                 .load(books?.results?.get(position)?.media?.get(0)?.mediametadata?.get(2)?.url)
-                .centerCrop()
+                .transform(CenterCrop(), RoundedCorners(20))
                 .placeholder(R.drawable.ic_newspaper_outline)
                 .into(holder.imageView)
         }
-
-//        Log.i("ABC",
-//            books?.results?.get(position)?.media?.get(0)?.mediametadata?.get(0)?.url
-//                ?: ""
-//        )
     }
 
     override fun getItemCount(): Int = books?.results?.size ?: 0
