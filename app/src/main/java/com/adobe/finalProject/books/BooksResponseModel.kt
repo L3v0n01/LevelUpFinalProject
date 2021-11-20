@@ -1,62 +1,52 @@
 package com.adobe.finalProject.books
 
+import com.google.gson.annotations.SerializedName
+
 data class BooksResponseModel(
-    val copyright: String,
-    val num_results: Int,
-    val results: Results,
-    val status: String
+    val copyright: String="",
+    val num_results: Int=0,
+    val results: List<Result> = listOf(),
+    val status: String=""
 ) {
-    data class Results(
-        val bestsellers_date: String,
-        val lists: List<Lists>,
-        val next_published_date: String,
-        val previous_published_date: String,
+    data class Result(
+        val `abstract`: String,
+        val adx_keywords: String,
+        val asset_id: Long,
+        val byline: String,
+        val column: Any,
+        val des_facet: List<String>,
+        val eta_id: Int,
+        val geo_facet: List<String>,
+        val id: Long,
+        val media: List<Media>,
+        val nytdsection: String,
+        val org_facet: List<String>,
+        val per_facet: List<String>,
         val published_date: String,
-        val published_date_description: String
+        val section: String,
+        val source: String,
+        val subsection: String,
+        val title: String,
+        val type: String,
+        val updated: String,
+        val uri: String,
+        val url: String
     ) {
-        data class Lists(
-            val books: List<Book>,
-            val display_name: String,
-            val list_id: Int,
-            val list_image: Any,
-            val list_image_height: Any,
-            val list_image_width: Any,
-            val list_name: String,
-            val list_name_encoded: String,
-            val updated: String
+        data class Media(
+            val approved_for_syndication: Int,
+            val caption: String,
+            val copyright: String,
+            @SerializedName("media-metadata")
+            val mediametadata: List<MediaMetadata>,
+            val subtype: String,
+            val type: String
         ) {
-            data class Book(
-                val age_group: String,
-                val amazon_product_url: String,
-                val article_chapter_link: String,
-                val author: String,
-                val book_image: String,
-                val book_image_height: Int,
-                val book_image_width: Int,
-                val book_review_link: String,
-                val book_uri: String,
-                val buy_links: List<BuyLink>,
-                val contributor: String,
-                val contributor_note: String,
-                val created_date: String,
-                val description: String,
-                val first_chapter_link: String,
-                val price: String,
-                val primary_isbn10: String,
-                val primary_isbn13: String,
-                val publisher: String,
-                val rank: Int,
-                val rank_last_week: Int,
-                val sunday_review_link: String,
-                val title: String,
-                val updated_date: String,
-                val weeks_on_list: Int
-            ) {
-                data class BuyLink(
-                    val name: String,
-                    val url: String
-                )
-            }
+            data class MediaMetadata(
+                val format: String,
+                val height: Int,
+                val url: String,
+                val width: Int
+            )
         }
     }
 }

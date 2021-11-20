@@ -2,6 +2,8 @@
     <string name="app_name">My Application</string>
     <string name="first_fragment">First Fragment PO</string>
     <string name="second_fragment">Second Fragment</string>
+    <string name="Books_Library">Books Library</string>
+    <string name="best_sellers">Best Sellers</string>
     <string name="books">Books</string>
     <string name="stories">Stories</string>
     <string name="movies">Movies</string>

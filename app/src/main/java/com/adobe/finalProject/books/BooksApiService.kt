@@ -5,6 +5,6 @@ import retrofit2.http.Query
 
 
 interface BooksApiService {
-    @GET("svc/books/v3/lists/overview.json")
+    @GET("svc/mostpopular/v2/emailed/7.json")
     suspend fun getBooks(@Query("api-key") apikey: String): BooksResponseModel
 }
